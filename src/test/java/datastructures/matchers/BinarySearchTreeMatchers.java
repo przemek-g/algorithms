@@ -7,11 +7,11 @@ import datastructures.BinarySearchTree.Node;
 import lombok.AllArgsConstructor;
 import lombok.experimental.UtilityClass;
 
+import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.FeatureMatcher;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
-import org.hamcrest.TypeSafeMatcher;
 
 @UtilityClass
 public class BinarySearchTreeMatchers {
@@ -68,12 +68,14 @@ public class BinarySearchTreeMatchers {
     }
 
     @AllArgsConstructor
-    private static final class TreeEqualityMatcher extends TypeSafeMatcher<Node> {
+    private static final class TreeEqualityMatcher extends BaseMatcher<Node> {
 
         private final Node referenceNode;
 
-        protected boolean matchesSafely(Node node) {
-            return treesAreIdentical(node, referenceNode);
+        public boolean matches(Object o) {
+
+            return  bothAreNull(o, referenceNode)
+                    || ((o instanceof Node) && treesAreIdentical((Node)o, referenceNode));
         }
 
         private static boolean treesAreIdentical(Node nodeOne, Node nodeTwo) {
@@ -102,7 +104,7 @@ public class BinarySearchTreeMatchers {
         }
     }
 
-    private static boolean bothAreNull(Node nodeOne, Node nodeTwo) {
+    private static boolean bothAreNull(Object nodeOne, Object nodeTwo) {
         return nodeOne == null && nodeTwo == null;
     }
 
