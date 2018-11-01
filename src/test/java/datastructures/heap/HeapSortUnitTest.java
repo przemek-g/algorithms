@@ -1,6 +1,6 @@
-package datastructures;
+package datastructures.heap;
 
-import static datastructures.Heap.heapSortAscending;
+import static datastructures.heap.Heap.heapSortAscending;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.arrayContaining;
 

@@ -1,11 +1,13 @@
-package datastructures;
+package datastructures.heap;
 
 import static lombok.AccessLevel.PRIVATE;
 import static utils.Arrays.swap;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @AllArgsConstructor(access = PRIVATE)
+@Getter
 public class Heap {
 
     private static final int NO_ELEMENT_MARKER = -1;
