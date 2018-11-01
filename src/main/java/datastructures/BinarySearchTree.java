@@ -40,7 +40,6 @@ public class BinarySearchTree {
         }
 
         Node parent = null, current = root;
-        current = root;
         boolean goLeft = false;
         while(current != null && current.value != value) {
             goLeft = value <= current.value;
@@ -58,15 +57,16 @@ public class BinarySearchTree {
         }
 
         Node substitute = null;
-        if (current.right != null) {
+        if (current.right != null && current.left != null) {
             substitute = pullMinimumOnTopOf(current.right);
             substitute.left = current.left;
-        } else if (current.left != null) {
-            substitute = pullMaximumOnTopOf(current);
+        } else if (current.right != null) { // only the right subtree is present - just take it in place of the deleted node
+            substitute = current.right;
+        } else if (current.left != null) { // only the left subtree is present - just take it in place of the deleted node
+            substitute = current.left;
         }
 
-        /* The value was actually found in the root; the root is effectively null now */
-        if (parent == null) {
+        if (parent == null) { /* The value was actually found in the root; the root is effectively null now */
             return substitute;
         } else if (goLeft) {
             parent.left = substitute;
@@ -129,6 +129,10 @@ public class BinarySearchTree {
 
         public static NodeBuilder ofValue(int value) {
             return new NodeBuilder().value(value);
+        }
+
+        public static Node ofValueWithoutChildren(int value) {
+            return builder().value(value).build();
         }
     }
 }
