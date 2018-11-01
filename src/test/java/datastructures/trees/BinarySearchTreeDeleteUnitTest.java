@@ -1,8 +1,8 @@
-package datastructures;
+package datastructures.trees;
 
-import static datastructures.BinarySearchTree.delete;
-import static datastructures.BinarySearchTree.pullMaximumOnTopOf;
-import static datastructures.BinarySearchTree.pullMinimumOnTopOf;
+import static datastructures.trees.BinarySearchTree.delete;
+import static datastructures.trees.BinarySearchTree.pullMaximumOnTopOf;
+import static datastructures.trees.BinarySearchTree.pullMinimumOnTopOf;
 import static datastructures.matchers.BinarySearchTreeMatchers.hasLeftChild;
 import static datastructures.matchers.BinarySearchTreeMatchers.hasNoLeftChild;
 import static datastructures.matchers.BinarySearchTreeMatchers.hasNoRightChild;
@@ -15,11 +15,11 @@ import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 
-import datastructures.BinarySearchTree.Node;
+import datastructures.trees.BinarySearchTree.Node;
 
 import org.junit.jupiter.api.Test;
 
-class BinarySearchTreeDeleteUnitTest {
+public class BinarySearchTreeDeleteUnitTest {
 
     @Test
     public void shouldPullMinimumFromTreeToItsTopWhenMinimumNodeIsALeaf() {

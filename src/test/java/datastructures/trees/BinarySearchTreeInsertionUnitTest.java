@@ -1,6 +1,6 @@
-package datastructures;
+package datastructures.trees;
 
-import static datastructures.BinarySearchTree.insert;
+import static datastructures.trees.BinarySearchTree.insert;
 import static datastructures.matchers.BinarySearchTreeMatchers.hasLeftChild;
 import static datastructures.matchers.BinarySearchTreeMatchers.hasNoLeftChild;
 import static datastructures.matchers.BinarySearchTreeMatchers.hasNoRightChild;
@@ -11,11 +11,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.nullValue;
 
-import datastructures.BinarySearchTree.Node;
+import datastructures.trees.BinarySearchTree.Node;
 
 import org.junit.jupiter.api.Test;
 
-class BinarySearchTreeInsertionUnitTest {
+public class BinarySearchTreeInsertionUnitTest {
 
     @Test
     public void insertingIntoAnEmptyTreeShouldReturnNewNodeAsRoot() {

@@ -4,7 +4,7 @@ import static datastructures.matchers.BinarySearchTreeMatchers.isTheSameTreeAs;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-import datastructures.BinarySearchTree.Node;
+import datastructures.trees.BinarySearchTree.Node;
 
 import org.hamcrest.Matcher;
 import org.junit.jupiter.api.Test;

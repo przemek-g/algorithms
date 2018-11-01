@@ -11,4 +11,12 @@ public class Arrays {
         array[first] = array[second];
         array[second] = copyOfFirst;
     }
+
+    public static Integer[] wrappedAsIntegers(int... elements) {
+        Integer[] integers = new Integer[elements.length];
+        for (int i = 0; i < elements.length; i++) {
+            integers[i] = elements[i];
+        }
+        return integers;
+    }
 }

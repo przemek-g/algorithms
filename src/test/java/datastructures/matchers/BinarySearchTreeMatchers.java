@@ -3,7 +3,7 @@ package datastructures.matchers;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.nullValue;
 
-import datastructures.BinarySearchTree.Node;
+import datastructures.trees.BinarySearchTree.Node;
 import lombok.AllArgsConstructor;
 import lombok.experimental.UtilityClass;
 
